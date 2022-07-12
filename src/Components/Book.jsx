@@ -1,3 +1,4 @@
+import { update } from "../BooksAPI";
 const Book = (props) => {
   const {category, book} = props;
   const options = {
@@ -17,8 +18,9 @@ const Book = (props) => {
         }}
       ></div>
       <div className="book-shelf-changer">
-        <select>
+        <select  defaultValue={category}  onChange={e => update(book, e.target.value)}>
           <option value="none" disabled>Move to...</option>,
+          <option value={category} disabled>{options[category]}</option>,
           {
             Object.keys(options).map((key,i) => 
             {
@@ -32,7 +34,7 @@ const Book = (props) => {
     </div>
     <div className="book-title">{book.title}</div>
     {
-      book.authors.map(author=>(<div className="book-authors">{author}</div>))
+      book.authors.map((author,i)=>(<div key={i} className="book-authors">{author}</div>))
     }
   </div>)
 }
