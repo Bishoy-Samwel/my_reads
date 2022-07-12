@@ -7,8 +7,8 @@ const Bookshelf = (props) => {
     <div className="bookshelf-books">
       <ol className="books-grid">
         {
-          list.map(book=>{
-          return (<li>
+          list.map((book, i)=>{
+          return (<li key={i}>
             <Book book={book} category={category}/>
           </li>)
           })
