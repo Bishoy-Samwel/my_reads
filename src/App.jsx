@@ -8,14 +8,16 @@ function App() {
 
   return (
     <div className="App">
-        {showSearchPage ? (
-          <Search setShowSearchpage={setShowSearchpage} showSearchPage={showSearchPage} />
-        ) : (
-          <></>
-        )}
-      <div className="open-search">
-        <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
-      </div>
+      {showSearchPage ? (
+        <Search setShowSearchpage={setShowSearchpage} showSearchPage={showSearchPage} />
+      ) : (
+        <>
+          <div className="open-search">
+            <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
+          </div>
+        </>
+      )}
+
     </div>
 
   )
