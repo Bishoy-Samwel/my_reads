@@ -12,7 +12,7 @@ function App() {
   useEffect(
     ()=>{
       getAll().then((books)=> setBooks(books))
-    },[])
+    },[books])
 
   return (
     <div className="App">
