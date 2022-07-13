@@ -13,10 +13,20 @@
 
 "My Reads" is A web application for managing e-library, I have been  working with the real live data from the reactnd-books-api. 
 
+In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
+*  Currently Reading     
+*  Want to Read     
+*  Read
+
+![image](https://user-images.githubusercontent.com/29541335/178758474-870865ec-cbf8-4f5f-80e4-f1259b953b66.png)
+
+The main page also has a link to /search, a search page that allows you to find books to add to your library.
+
+![image](https://user-images.githubusercontent.com/29541335/178758384-ec4418d7-47b5-4299-b6c7-18468cb54995.png)
+
 
 <!-- ## [Live Demo - GH pages]() -->
 <!-- ## [Live Demo - Netlify]() -->
-## [Live Demo - Heroku]()
 
 ## Built With
 
@@ -32,7 +42,7 @@
     git clone https://github.com/Bishoy-Samwel/my_reads.git
     ```
 
-* Navigate to SpaceTravelers folder/directory
+* Navigate to my_reads folder/directory
 
     ```bash
     cd my_reads
