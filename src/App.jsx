@@ -1,17 +1,35 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Search from "./Components/Search";
+import Books from "./Components/Books";
+import { getAll } from "./BooksAPI";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showSearchPage, setShowSearchpage] = useState(false);
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    getAll().then((books) => setBooks(books));
+  }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1> Hello World </h1>
-      </header>
+      {showSearchPage ? (
+        <Search
+          setShowSearchpage={setShowSearchpage}
+          showSearchPage={showSearchPage}
+        />
+      ) : (
+        <>
+          <Books books={books} />
+          <div className="open-search">
+            <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
