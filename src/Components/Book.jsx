@@ -8,7 +8,7 @@ const Book = (props) => {
   }
   return (<div className="book">
     <div className="book-top">
-      <div
+      {book.imageLinks && book.imageLinks.thumbnail && <div
         className="book-cover"
         style={{
           width: 128,
@@ -16,7 +16,7 @@ const Book = (props) => {
           backgroundImage:
             `url("${book.imageLinks.thumbnail}")`,
         }}
-      ></div>
+      ></div>}
       <div className="book-shelf-changer">
         <select defaultValue={category} onChange={e => update(book, e.target.value)}>
           <option value="none" disabled>Move to...</option>,
