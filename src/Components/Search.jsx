@@ -4,7 +4,7 @@ import { search } from "../BooksAPI";
 import { useState } from "react";
 
 const Search = (props) => {
-  const {setShowSearchpage, showSearchPage} = props
+  const {books} = props
   const [result, setResult] = useState([])
   return (
     <div className="search-books">
@@ -18,7 +18,7 @@ const Search = (props) => {
               />
             </div>
           </div>
-          <Filtered result={result}/>
+          <Filtered result={result} books={books}/>
     </div>
   )
 }

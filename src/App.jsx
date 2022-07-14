@@ -7,7 +7,6 @@ import { getAll } from './BooksAPI';
 import { Link, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [showSearchPage, setShowSearchpage] = useState(false);
   const [books, setBooks] = useState([]);
 
   useEffect(
@@ -19,7 +18,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Books books={books} />} />
-        <Route path="seacrh" element={<Search setShowSearchpage={setShowSearchpage} showSearchPage={showSearchPage} />} />
+        <Route path="seacrh" element={<Search books={books} />} />
       </Routes>
 
     </div>
