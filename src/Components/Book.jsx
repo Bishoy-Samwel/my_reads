@@ -1,11 +1,7 @@
 import { update } from "../BooksAPI";
 const Book = (props) => {
-  const { category, book } = props;
-  const options = {
-    "currentlyReading": "Currently Reading",
-    "wantToRead": "Want to Read",
-    "read": "Read"
-  }
+  const { category, book, options } = props;
+
   return (<div className="book">
     <div className="book-top">
       {book.imageLinks && book.imageLinks.thumbnail && <div
